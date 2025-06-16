@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Registration Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+    input, select, textarea {
+      width: 300px;
+      padding: 8px;
+      margin-top: 5px;
+    }
+    .gender, .education {
+      width: auto;
+    }
+    .form-section {
+      margin-bottom: 15px;
+    }
+    .register-btn {
+      margin-top: 15px;
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Registration Form</h2>
+
+  <form onsubmit="redirectToLogin(event)">
+  
+    <div class="form-section">
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" name="name" required>
+    </div>
+
+    <div class="form-section">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+
+    <div class="form-section">
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+    </div>
+
+    <div class="form-section">
+      <label for="confirm-password">Confirm Password:</label>
+      <input type="password" id="confirm-password" name="confirm_password" required>
+    </div>
+
+    <div class="form-section">
+      <label for="mobile">Mobile Number:</label>
+      <input type="tel" id="mobile" name="mobile" pattern="[0-9]{10}" required>
+    </div>
+
+    <div class="form-section">
+      <label>Gender:</label>
+      <input type="radio" class="gender" name="gender" value="Male" required> Male
+      <input type="radio" class="gender" name="gender" value="Female"> Female
+      <input type="radio" class="gender" name="gender" value="Other"> Other
+    </div>
+
+    <div class="form-section">
+      <label>Education Details:</label>
+      <input type="checkbox" class="education" name="education[]" value="High School"> High School
+      <input type="checkbox" class="education" name="education[]" value="Intermediate"> Intermediate
+      <input type="checkbox" class="education" name="education[]" value="Diploma"> Diploma
+      <input type="checkbox" class="education" name="education[]" value="B.Tech"> B.Tech
+    </div>
+    
+    <div class="form-section">
+      <label for="city">City:</label>
+      <select id="city" name="city" required>
+        <option value="">-- Select City --</option>
+        <option value="Visakapatnam">Visakapatnam</option>
+        <option value="Anakapalli">Anakapalli</option>
+        <option value="vizianagaram">Vizianagaram</option>
+        <option value="vijayawada">Vijayawada</option>
+        <option value="Other">Other</option>
+      </select>
+    </div>
+
+    <div class="form-section">
+      <label for="address">Address:</label>
+      <textarea id="address" name="address" rows="4" required></textarea>
+    </div>
+
+    <div class="form-section">
+      <label for="photo">Upload Picture:</label>
+      <input type="file" id="photo" name="photo" accept="image/*" required>
+    </div>
+
+    <div class="form-section">
+      <button type="submit" class="register-btn">Register</button>
+    </div>
+
+  </form>
+
+  <script>
+    function redirectToLogin(event) {
+      event.preventDefault(); // Prevent form from submitting
+      // Optional: Add form validation logic here if needed
+
+      // Redirect to login.html
+      window.location.href = "login.html";
+    }
+  </script>
+
+</body>
+</html>
